@@ -2,18 +2,31 @@
 
 ## Project setup
 ```
-npm install
+npm install ss-columns -D
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+
+
+## Use
+
+### In app entry file:
+
+```js
+import Vue from 'vue';
+import Plugin from 'ss-columns';
+Vue.use(Plugin);
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### In your component:
+
+```js
+<el-table v-ss-columns>
+  <el-table-column label="No." type="index" class-name="dont-fix"></el-table-column>
+  <el-table-column label="Name" prop="name"></el-table-column>
+  <el-table-column label="Age" prop="age"></el-table-column>
+</el-table>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### For columns that don't need to be fitted, add a `dont-fix` class by setting `class-name` in `<el-table-column>`.
